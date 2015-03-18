@@ -1,6 +1,6 @@
 //
-//  AWBTCChinaAPITests.m
-//  AWBTCChinaAPITests
+//  AWBTCChinaAPIDemoTests.m
+//  AWBTCChinaAPIDemoTests
 //
 //  Created by mafengwo on 15/3/18.
 //  Copyright (c) 2015年 Aldaron. All rights reserved.
@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface AWBTCChinaAPITests : XCTestCase
+@interface AWBTCChinaAPIDemoTests : XCTestCase
 
 @end
 
-@implementation AWBTCChinaAPITests
+@implementation AWBTCChinaAPIDemoTests
 
 - (void)setUp {
     [super setUp];
