@@ -14,6 +14,7 @@
 		335BB88C1AB97F0F0093909B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 335BB88B1AB97F0F0093909B /* Images.xcassets */; };
 		335BB88F1AB97F0F0093909B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335BB88D1AB97F0F0093909B /* LaunchScreen.xib */; };
 		335BB89B1AB97F0F0093909B /* AWBTCChinaAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 335BB89A1AB97F0F0093909B /* AWBTCChinaAPITests.m */; };
+		B36C62BA0325B510357372DF /* libPods-AWBTCChinaAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62879ED20E54ED0C755C6F7C /* libPods-AWBTCChinaAPI.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,9 @@
 		335BB8941AB97F0F0093909B /* AWBTCChinaAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AWBTCChinaAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		335BB8991AB97F0F0093909B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		335BB89A1AB97F0F0093909B /* AWBTCChinaAPITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AWBTCChinaAPITests.m; sourceTree = "<group>"; };
+		62879ED20E54ED0C755C6F7C /* libPods-AWBTCChinaAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AWBTCChinaAPI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		77F433740BBE8E9BD58E37A7 /* Pods-AWBTCChinaAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AWBTCChinaAPI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AWBTCChinaAPI/Pods-AWBTCChinaAPI.debug.xcconfig"; sourceTree = "<group>"; };
+		D08A55552AE8792697E4F15D /* Pods-AWBTCChinaAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AWBTCChinaAPI.release.xcconfig"; path = "Pods/Target Support Files/Pods-AWBTCChinaAPI/Pods-AWBTCChinaAPI.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B36C62BA0325B510357372DF /* libPods-AWBTCChinaAPI.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +65,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C38DA4492EE2DB82CD18769 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				77F433740BBE8E9BD58E37A7 /* Pods-AWBTCChinaAPI.debug.xcconfig */,
+				D08A55552AE8792697E4F15D /* Pods-AWBTCChinaAPI.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2DB1BE8AEE869BF38A0B5E2E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				62879ED20E54ED0C755C6F7C /* libPods-AWBTCChinaAPI.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		335BB8721AB97F0F0093909B = {
 			isa = PBXGroup;
 			children = (
 				335BB87D1AB97F0F0093909B /* AWBTCChinaAPI */,
 				335BB8971AB97F0F0093909B /* AWBTCChinaAPITests */,
 				335BB87C1AB97F0F0093909B /* Products */,
+				0C38DA4492EE2DB82CD18769 /* Pods */,
+				2DB1BE8AEE869BF38A0B5E2E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,9 +150,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 335BB89E1AB97F0F0093909B /* Build configuration list for PBXNativeTarget "AWBTCChinaAPI" */;
 			buildPhases = (
+				11665BDD8CEAC43706E196B2 /* Check Pods Manifest.lock */,
 				335BB8771AB97F0F0093909B /* Sources */,
 				335BB8781AB97F0F0093909B /* Frameworks */,
 				335BB8791AB97F0F0093909B /* Resources */,
+				46419CD8755AF4E0139F2EA8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -213,6 +239,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		11665BDD8CEAC43706E196B2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		46419CD8755AF4E0139F2EA8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AWBTCChinaAPI/Pods-AWBTCChinaAPI-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		335BB8771AB97F0F0093909B /* Sources */ = {
@@ -343,6 +402,7 @@
 		};
 		335BB89F1AB97F0F0093909B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77F433740BBE8E9BD58E37A7 /* Pods-AWBTCChinaAPI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AWBTCChinaAPI/Info.plist;
@@ -353,6 +413,7 @@
 		};
 		335BB8A01AB97F0F0093909B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D08A55552AE8792697E4F15D /* Pods-AWBTCChinaAPI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AWBTCChinaAPI/Info.plist;
@@ -414,6 +475,7 @@
 				335BB8A01AB97F0F0093909B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		335BB8A11AB97F0F0093909B /* Build configuration list for PBXNativeTarget "AWBTCChinaAPITests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +484,7 @@
 				335BB8A31AB97F0F0093909B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
