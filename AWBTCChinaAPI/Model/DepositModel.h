@@ -1,5 +1,5 @@
 //
-//  WithdrawalModel.h
+//  DepositModel.h
 //  AWBTCChinaAPIDemo
 //
 //  Created by mafengwo on 15/3/19.
@@ -10,23 +10,21 @@
 #import "AWBaseModel.h"
 
 /**
- *  取现Model
+ *  存款Model
  */
-@interface WithdrawalModel : AWBaseModel
+@interface DepositModel : AWBaseModel
 
-/** 提现 ID **/
-@property (nonatomic, readonly) NSInteger WithdrawalID;
-/** 比特币或者莱特币提现地址 **/
+/** 存款 ID **/
+@property (nonatomic, readonly) NSInteger depositID;
+/** 比特币或者莱特币充值地址 **/
 @property (nonatomic, readonly) NSString *address;
 /** 货币代码。可能值：BTC 或 LTC **/
 @property (nonatomic, readonly) NSString *currency;
-/** 提现数量 **/
+/** 充值数量 **/
 @property (nonatomic, readonly) NSNumber *amount;
 /** Unix 时间戳。自1970年1月1日以来的秒数 **/
 @property (nonatomic, readonly) NSInteger date;
-/** 交易 ID **/
-@property (nonatomic, readonly) NSString *transaction;
-/** 提现状态。可能值：pending 、completed、 processing、 cancel、refund **/
+/** 充值状态。可能值：pending 或 completed **/
 @property (nonatomic, readonly) NSString *status;
 
 @end

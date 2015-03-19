@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AWBaseModel.h"
 
-@interface ProfileModel : NSObject
+@interface ProfileModel : AWBaseModel
 
 @end

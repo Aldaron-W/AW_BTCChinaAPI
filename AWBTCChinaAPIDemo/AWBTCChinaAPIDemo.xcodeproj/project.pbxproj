@@ -15,12 +15,20 @@
 		330D8D251AB98E5D00DC6E76 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 330D8D231AB98E5D00DC6E76 /* LaunchScreen.xib */; };
 		330D8D311AB98E5D00DC6E76 /* AWBTCChinaAPIDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 330D8D301AB98E5D00DC6E76 /* AWBTCChinaAPIDemoTests.m */; };
 		330D8D791AB9950000DC6E76 /* BalanceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 330D8D6C1AB9950000DC6E76 /* BalanceModel.m */; };
-		330D8D7A1AB9950000DC6E76 /* ErrorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 330D8D6E1AB9950000DC6E76 /* ErrorModel.m */; };
 		330D8D7B1AB9950000DC6E76 /* FrozenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 330D8D701AB9950000DC6E76 /* FrozenModel.m */; };
 		330D8D7C1AB9950000DC6E76 /* LoanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 330D8D721AB9950000DC6E76 /* LoanModel.m */; };
 		330D8D7D1AB9950000DC6E76 /* OrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 330D8D741AB9950000DC6E76 /* OrderModel.m */; };
 		330D8D7E1AB9950000DC6E76 /* ProfileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 330D8D761AB9950000DC6E76 /* ProfileModel.m */; };
-		330D8D7F1AB9950000DC6E76 /* WithDrawalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 330D8D781AB9950000DC6E76 /* WithDrawalModel.m */; };
+		3347657B1ABA72420001DB5E /* DepositModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3347657A1ABA72420001DB5E /* DepositModel.m */; };
+		3347657E1ABA72980001DB5E /* MarketDepthModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3347657D1ABA72980001DB5E /* MarketDepthModel.m */; };
+		334765811ABA72EF0001DB5E /* WithdrawalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 334765801ABA72EF0001DB5E /* WithdrawalModel.m */; };
+		334765841ABA73140001DB5E /* Bid&AskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 334765831ABA73140001DB5E /* Bid&AskModel.m */; };
+		334765871ABA73280001DB5E /* TransactionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 334765861ABA73280001DB5E /* TransactionModel.m */; };
+		3347658A1ABA73360001DB5E /* IcebergOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 334765891ABA73360001DB5E /* IcebergOrderModel.m */; };
+		3347658D1ABA73850001DB5E /* OrderDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3347658C1ABA73850001DB5E /* OrderDetailModel.m */; };
+		334765901ABA73960001DB5E /* StopOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3347658F1ABA73960001DB5E /* StopOrderModel.m */; };
+		334765941ABA78A80001DB5E /* ErrorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 334765931ABA78A80001DB5E /* ErrorModel.m */; };
+		334765971ABA7B5B0001DB5E /* AWBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 334765961ABA7B5B0001DB5E /* AWBaseModel.m */; };
 		A5A4D71A14DD06F59B4ABFF9 /* libPods-AWBTCChinaAPIDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8040E46D5D5D32DCFB94959 /* libPods-AWBTCChinaAPIDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -50,8 +58,6 @@
 		330D8D301AB98E5D00DC6E76 /* AWBTCChinaAPIDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AWBTCChinaAPIDemoTests.m; sourceTree = "<group>"; };
 		330D8D6B1AB9950000DC6E76 /* BalanceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BalanceModel.h; sourceTree = "<group>"; };
 		330D8D6C1AB9950000DC6E76 /* BalanceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BalanceModel.m; sourceTree = "<group>"; };
-		330D8D6D1AB9950000DC6E76 /* ErrorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorModel.h; sourceTree = "<group>"; };
-		330D8D6E1AB9950000DC6E76 /* ErrorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorModel.m; sourceTree = "<group>"; };
 		330D8D6F1AB9950000DC6E76 /* FrozenModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrozenModel.h; sourceTree = "<group>"; };
 		330D8D701AB9950000DC6E76 /* FrozenModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrozenModel.m; sourceTree = "<group>"; };
 		330D8D711AB9950000DC6E76 /* LoanModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoanModel.h; sourceTree = "<group>"; };
@@ -60,8 +66,26 @@
 		330D8D741AB9950000DC6E76 /* OrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderModel.m; sourceTree = "<group>"; };
 		330D8D751AB9950000DC6E76 /* ProfileModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileModel.h; sourceTree = "<group>"; };
 		330D8D761AB9950000DC6E76 /* ProfileModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileModel.m; sourceTree = "<group>"; };
-		330D8D771AB9950000DC6E76 /* WithDrawalModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WithDrawalModel.h; sourceTree = "<group>"; };
-		330D8D781AB9950000DC6E76 /* WithDrawalModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WithDrawalModel.m; sourceTree = "<group>"; };
+		334765791ABA72420001DB5E /* DepositModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepositModel.h; sourceTree = "<group>"; };
+		3347657A1ABA72420001DB5E /* DepositModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DepositModel.m; sourceTree = "<group>"; };
+		3347657C1ABA72980001DB5E /* MarketDepthModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarketDepthModel.h; sourceTree = "<group>"; };
+		3347657D1ABA72980001DB5E /* MarketDepthModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarketDepthModel.m; sourceTree = "<group>"; };
+		3347657F1ABA72EF0001DB5E /* WithdrawalModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WithdrawalModel.h; sourceTree = "<group>"; };
+		334765801ABA72EF0001DB5E /* WithdrawalModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WithdrawalModel.m; sourceTree = "<group>"; };
+		334765821ABA73140001DB5E /* Bid&AskModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bid&AskModel.h"; sourceTree = "<group>"; };
+		334765831ABA73140001DB5E /* Bid&AskModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Bid&AskModel.m"; sourceTree = "<group>"; };
+		334765851ABA73280001DB5E /* TransactionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionModel.h; sourceTree = "<group>"; };
+		334765861ABA73280001DB5E /* TransactionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionModel.m; sourceTree = "<group>"; };
+		334765881ABA73360001DB5E /* IcebergOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IcebergOrderModel.h; sourceTree = "<group>"; };
+		334765891ABA73360001DB5E /* IcebergOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IcebergOrderModel.m; sourceTree = "<group>"; };
+		3347658B1ABA73850001DB5E /* OrderDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailModel.h; sourceTree = "<group>"; };
+		3347658C1ABA73850001DB5E /* OrderDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailModel.m; sourceTree = "<group>"; };
+		3347658E1ABA73960001DB5E /* StopOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopOrderModel.h; sourceTree = "<group>"; };
+		3347658F1ABA73960001DB5E /* StopOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopOrderModel.m; sourceTree = "<group>"; };
+		334765921ABA78A80001DB5E /* ErrorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorModel.h; sourceTree = "<group>"; };
+		334765931ABA78A80001DB5E /* ErrorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorModel.m; sourceTree = "<group>"; };
+		334765951ABA7B5B0001DB5E /* AWBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AWBaseModel.h; path = Base/AWBaseModel.h; sourceTree = "<group>"; };
+		334765961ABA7B5B0001DB5E /* AWBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AWBaseModel.m; path = Base/AWBaseModel.m; sourceTree = "<group>"; };
 		6DBE7350C5235CE7838D5274 /* Pods-AWBTCChinaAPIDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AWBTCChinaAPIDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AWBTCChinaAPIDemo/Pods-AWBTCChinaAPIDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		854CFA5EC1A9744513765712 /* Pods-AWBTCChinaAPIDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AWBTCChinaAPIDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-AWBTCChinaAPIDemo/Pods-AWBTCChinaAPIDemo.release.xcconfig"; sourceTree = "<group>"; };
 		B8040E46D5D5D32DCFB94959 /* libPods-AWBTCChinaAPIDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AWBTCChinaAPIDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,20 +186,52 @@
 			children = (
 				330D8D6B1AB9950000DC6E76 /* BalanceModel.h */,
 				330D8D6C1AB9950000DC6E76 /* BalanceModel.m */,
-				330D8D6D1AB9950000DC6E76 /* ErrorModel.h */,
-				330D8D6E1AB9950000DC6E76 /* ErrorModel.m */,
+				334765981ABA7B5F0001DB5E /* Base */,
+				334765821ABA73140001DB5E /* Bid&AskModel.h */,
+				334765831ABA73140001DB5E /* Bid&AskModel.m */,
+				334765791ABA72420001DB5E /* DepositModel.h */,
+				3347657A1ABA72420001DB5E /* DepositModel.m */,
+				334765911ABA78A80001DB5E /* Error */,
 				330D8D6F1AB9950000DC6E76 /* FrozenModel.h */,
 				330D8D701AB9950000DC6E76 /* FrozenModel.m */,
+				334765881ABA73360001DB5E /* IcebergOrderModel.h */,
+				334765891ABA73360001DB5E /* IcebergOrderModel.m */,
 				330D8D711AB9950000DC6E76 /* LoanModel.h */,
 				330D8D721AB9950000DC6E76 /* LoanModel.m */,
+				3347657C1ABA72980001DB5E /* MarketDepthModel.h */,
+				3347657D1ABA72980001DB5E /* MarketDepthModel.m */,
+				3347658B1ABA73850001DB5E /* OrderDetailModel.h */,
+				3347658C1ABA73850001DB5E /* OrderDetailModel.m */,
 				330D8D731AB9950000DC6E76 /* OrderModel.h */,
 				330D8D741AB9950000DC6E76 /* OrderModel.m */,
 				330D8D751AB9950000DC6E76 /* ProfileModel.h */,
 				330D8D761AB9950000DC6E76 /* ProfileModel.m */,
-				330D8D771AB9950000DC6E76 /* WithDrawalModel.h */,
-				330D8D781AB9950000DC6E76 /* WithDrawalModel.m */,
+				3347658E1ABA73960001DB5E /* StopOrderModel.h */,
+				3347658F1ABA73960001DB5E /* StopOrderModel.m */,
+				334765851ABA73280001DB5E /* TransactionModel.h */,
+				334765861ABA73280001DB5E /* TransactionModel.m */,
+				3347657F1ABA72EF0001DB5E /* WithdrawalModel.h */,
+				334765801ABA72EF0001DB5E /* WithdrawalModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		334765911ABA78A80001DB5E /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				334765921ABA78A80001DB5E /* ErrorModel.h */,
+				334765931ABA78A80001DB5E /* ErrorModel.m */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		334765981ABA7B5F0001DB5E /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				334765951ABA7B5B0001DB5E /* AWBaseModel.h */,
+				334765961ABA7B5B0001DB5E /* AWBaseModel.m */,
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 		3B602CB8E5F6B32386D33CFD /* Frameworks */ = {
@@ -330,16 +386,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				334765971ABA7B5B0001DB5E /* AWBaseModel.m in Sources */,
+				334765811ABA72EF0001DB5E /* WithdrawalModel.m in Sources */,
 				330D8D791AB9950000DC6E76 /* BalanceModel.m in Sources */,
 				330D8D7B1AB9950000DC6E76 /* FrozenModel.m in Sources */,
 				330D8D7C1AB9950000DC6E76 /* LoanModel.m in Sources */,
+				3347657B1ABA72420001DB5E /* DepositModel.m in Sources */,
 				330D8D1D1AB98E5D00DC6E76 /* ViewController.m in Sources */,
-				330D8D7F1AB9950000DC6E76 /* WithDrawalModel.m in Sources */,
+				3347658A1ABA73360001DB5E /* IcebergOrderModel.m in Sources */,
 				330D8D7D1AB9950000DC6E76 /* OrderModel.m in Sources */,
+				3347657E1ABA72980001DB5E /* MarketDepthModel.m in Sources */,
+				334765871ABA73280001DB5E /* TransactionModel.m in Sources */,
 				330D8D1A1AB98E5D00DC6E76 /* AppDelegate.m in Sources */,
 				330D8D171AB98E5D00DC6E76 /* main.m in Sources */,
 				330D8D7E1AB9950000DC6E76 /* ProfileModel.m in Sources */,
-				330D8D7A1AB9950000DC6E76 /* ErrorModel.m in Sources */,
+				334765941ABA78A80001DB5E /* ErrorModel.m in Sources */,
+				3347658D1ABA73850001DB5E /* OrderDetailModel.m in Sources */,
+				334765841ABA73140001DB5E /* Bid&AskModel.m in Sources */,
+				334765901ABA73960001DB5E /* StopOrderModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

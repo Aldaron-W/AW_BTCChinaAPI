@@ -8,6 +8,21 @@
 
 #import "BalanceModel.h"
 
+@interface BalanceModel ()
+
+/** 货币代码 */
+@property (nonatomic, strong) NSString *currency;
+/** 货币符号 */
+@property (nonatomic, strong) NSString *symbol;
+/** 账户余额 (小数精度) */
+@property (nonatomic, strong) NSNumber* amount;
+/** 账户余额 (整数精度) */
+@property (nonatomic, strong) NSString *amount_integer;
+/** 在使用“amount_integer”时小数点的位置 */
+@property (nonatomic, assign) NSInteger *amount_decimal;
+
+@end
+
 @implementation BalanceModel
 
 @end

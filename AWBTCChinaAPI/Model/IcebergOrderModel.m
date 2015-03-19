@@ -1,13 +1,13 @@
 //
-//  WithdrawalModel.m
+//  IcebergOrderModel.m
 //  AWBTCChinaAPIDemo
 //
 //  Created by mafengwo on 15/3/19.
 //  Copyright (c) 2015年 Aldaron. All rights reserved.
 //
 
-#import "WithdrawalModel.h"
+#import "IcebergOrderModel.h"
 
-@implementation WithdrawalModel
+@implementation IcebergOrderModel
 
 @end
