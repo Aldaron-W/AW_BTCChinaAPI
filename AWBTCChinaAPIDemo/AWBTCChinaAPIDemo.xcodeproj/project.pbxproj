@@ -29,6 +29,8 @@
 		334765901ABA73960001DB5E /* StopOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3347658F1ABA73960001DB5E /* StopOrderModel.m */; };
 		334765941ABA78A80001DB5E /* ErrorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 334765931ABA78A80001DB5E /* ErrorModel.m */; };
 		334765971ABA7B5B0001DB5E /* AWBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 334765961ABA7B5B0001DB5E /* AWBaseModel.m */; };
+		3347659C1ABAD3AF0001DB5E /* AWBTCChinaBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3347659B1ABAD3AF0001DB5E /* AWBTCChinaBaseRequest.m */; };
+		334765A11ABADFD20001DB5E /* AWBTCChinaRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 334765A01ABADFD20001DB5E /* AWBTCChinaRequest.m */; };
 		A5A4D71A14DD06F59B4ABFF9 /* libPods-AWBTCChinaAPIDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8040E46D5D5D32DCFB94959 /* libPods-AWBTCChinaAPIDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +88,11 @@
 		334765931ABA78A80001DB5E /* ErrorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorModel.m; sourceTree = "<group>"; };
 		334765951ABA7B5B0001DB5E /* AWBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AWBaseModel.h; path = Base/AWBaseModel.h; sourceTree = "<group>"; };
 		334765961ABA7B5B0001DB5E /* AWBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AWBaseModel.m; path = Base/AWBaseModel.m; sourceTree = "<group>"; };
+		3347659A1ABAD3AF0001DB5E /* AWBTCChinaBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWBTCChinaBaseRequest.h; sourceTree = "<group>"; };
+		3347659B1ABAD3AF0001DB5E /* AWBTCChinaBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWBTCChinaBaseRequest.m; sourceTree = "<group>"; };
+		3347659E1ABADA290001DB5E /* AWRequestMecros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AWRequestMecros.h; sourceTree = "<group>"; };
+		3347659F1ABADFD20001DB5E /* AWBTCChinaRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWBTCChinaRequest.h; sourceTree = "<group>"; };
+		334765A01ABADFD20001DB5E /* AWBTCChinaRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWBTCChinaRequest.m; sourceTree = "<group>"; };
 		6DBE7350C5235CE7838D5274 /* Pods-AWBTCChinaAPIDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AWBTCChinaAPIDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AWBTCChinaAPIDemo/Pods-AWBTCChinaAPIDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		854CFA5EC1A9744513765712 /* Pods-AWBTCChinaAPIDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AWBTCChinaAPIDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-AWBTCChinaAPIDemo/Pods-AWBTCChinaAPIDemo.release.xcconfig"; sourceTree = "<group>"; };
 		B8040E46D5D5D32DCFB94959 /* libPods-AWBTCChinaAPIDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AWBTCChinaAPIDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,6 +182,8 @@
 		330D8D691AB9950000DC6E76 /* AWBTCChinaAPI */ = {
 			isa = PBXGroup;
 			children = (
+				3347659D1ABAD9C70001DB5E /* Macro */,
+				334765991ABAC0A20001DB5E /* AWBTCChinaRequest */,
 				330D8D6A1AB9950000DC6E76 /* Model */,
 			);
 			name = AWBTCChinaAPI;
@@ -232,6 +241,25 @@
 				334765961ABA7B5B0001DB5E /* AWBaseModel.m */,
 			);
 			name = Base;
+			sourceTree = "<group>";
+		};
+		334765991ABAC0A20001DB5E /* AWBTCChinaRequest */ = {
+			isa = PBXGroup;
+			children = (
+				3347659A1ABAD3AF0001DB5E /* AWBTCChinaBaseRequest.h */,
+				3347659B1ABAD3AF0001DB5E /* AWBTCChinaBaseRequest.m */,
+				3347659F1ABADFD20001DB5E /* AWBTCChinaRequest.h */,
+				334765A01ABADFD20001DB5E /* AWBTCChinaRequest.m */,
+			);
+			path = AWBTCChinaRequest;
+			sourceTree = "<group>";
+		};
+		3347659D1ABAD9C70001DB5E /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				3347659E1ABADA290001DB5E /* AWRequestMecros.h */,
+			);
+			path = Macro;
 			sourceTree = "<group>";
 		};
 		3B602CB8E5F6B32386D33CFD /* Frameworks */ = {
@@ -404,6 +432,8 @@
 				3347658D1ABA73850001DB5E /* OrderDetailModel.m in Sources */,
 				334765841ABA73140001DB5E /* Bid&AskModel.m in Sources */,
 				334765901ABA73960001DB5E /* StopOrderModel.m in Sources */,
+				3347659C1ABAD3AF0001DB5E /* AWBTCChinaBaseRequest.m in Sources */,
+				334765A11ABADFD20001DB5E /* AWBTCChinaRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
