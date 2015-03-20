@@ -14,7 +14,7 @@
 @property (nonatomic,copy) NSString *accessKey;
 @property (nonatomic,copy) NSString *secretKey;
 
-- (void)sendRequestWithMethod:(NSString *)methodName andParams:(NSDictionary *)params andID:(NSInteger)requestID
+- (void)sendRequestWithMethod:(NSString *)methodName andParams:(NSString *)params andID:(NSInteger)requestID
                       success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
                       failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 

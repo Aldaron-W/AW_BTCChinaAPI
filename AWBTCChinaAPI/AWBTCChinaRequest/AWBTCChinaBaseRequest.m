@@ -13,7 +13,7 @@
 
 @implementation AWBTCChinaBaseRequest
 
-- (void)sendRequestWithMethod:(NSString *)methodName andParams:(NSDictionary *)params andID:(NSInteger)requestID
+- (void)sendRequestWithMethod:(NSString *)methodName andParams:(NSString *)params andID:(NSInteger)requestID
                       success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
                       failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure{
     
@@ -23,13 +23,14 @@
     NSString *signature = [NSString stringWithFormat:@"tonce=%@&accesskey=%@&requestmethod=post&id=1&method=%@&params=%@", tonceString, self.accessKey, methodName, params];
     NSString *hash = [self signHmacSHA1String:signature withKey:self.secretKey];
     
-    AFHTTPRequestSerializer *requestSerializer = [[AFHTTPRequestSerializer alloc] init];
+    AFJSONRequestSerializer *requestSerializer = [[AFJSONRequestSerializer alloc] init];
     [requestSerializer setValue:tonceString forHTTPHeaderField:@"Json-Rpc-Tonce"];
     [requestSerializer setAuthorizationHeaderFieldWithUsername:self.accessKey password:hash];
     
     AFJSONRPCClient *client = [AFJSONRPCClient clientWithEndpointURL:[NSURL URLWithString:BTCCHINA_REQUEST_BASE_URL]];
     [client setRequestSerializer:requestSerializer];
-    [client invokeMethod:methodName withParameters:nil requestId:nil success:success failure:failure];
+    [client invokeMethod:methodName withParameters:@[] requestId:@1 success:success failure:failure];
+    
 }
 
 #pragma mark - HMAC-SHA1 (NO BASE64)

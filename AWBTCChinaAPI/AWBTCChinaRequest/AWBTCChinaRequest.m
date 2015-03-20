@@ -22,9 +22,10 @@
     return _sharedAPIKit;
 }
 
+
 - (void)getAccountInfoWithType:(NSString *)requestType{
     
-    [self sendRequestWithMethod:@"getAccountInfo" andParams:@{} andID:1 success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [self sendRequestWithMethod:@"getAccountInfo" andParams:@"" andID:1 success:^(AFHTTPRequestOperation *operation, id responseObject) {
         ;
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         ;
