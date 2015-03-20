@@ -41,4 +41,21 @@
 
 @implementation ProfileModel
 
+- (void)parseJSONData:(NSDictionary *)responseObject{
+    
+    self.username = [responseObject objectForKey:@"username"];
+    self.trade_password_enabled = [[responseObject objectForKey:@"trade_password_enabled"] boolValue];
+    self.otp_enabled = [[responseObject objectForKey:@"otp_enabled"] boolValue];
+    self.trade_fee = [NSNumber numberWithDouble:[[responseObject objectForKey:@"trade_fee"] doubleValue]];
+    self.trade_fee_btcltc = [NSNumber numberWithDouble:[[responseObject objectForKey:@"trade_fee_btcltc"] doubleValue]];
+    self.trade_fee_cnyltc = [NSNumber numberWithDouble:[[responseObject objectForKey:@"trade_fee_cnyltc"] doubleValue]];
+    self.daily_btc_limit = [NSNumber numberWithDouble:[[responseObject objectForKey:@"daily_btc_limit"] doubleValue]];
+    self.daily_ltc_limit = [NSNumber numberWithDouble:[[responseObject objectForKey:@"daily_ltc_limit"] doubleValue]];
+    self.btc_deposit_address = [responseObject objectForKey:@"btc_deposit_address"];
+    self.btc_withdrawal_address = [responseObject objectForKey:@"btc_withdrawal_address"];
+    self.ltc_deposit_address = [responseObject objectForKey:@"ltc_deposit_address"];
+    self.ltc_withdrawal_address = [responseObject objectForKey:@"ltc_withdrawal_address"];
+    self.api_key_permission = [responseObject objectForKey:@"api_key_permission"];
+}
+
 @end

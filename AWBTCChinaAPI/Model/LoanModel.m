@@ -25,4 +25,12 @@
 
 @implementation LoanModel
 
+- (void)parseJSONData:(NSDictionary *)responseObject{
+    self.amount = [NSNumber numberWithDouble:[[responseObject objectForKey:@"amount"] doubleValue]];
+    self.amount_decimal = [[responseObject objectForKey:@"amount_decimal"] integerValue];
+    self.amount_integer = [responseObject objectForKey:@"amount_integer"];
+    self.currency = [responseObject objectForKey:@"currency"];
+    self.symbol = [responseObject objectForKey:@"symbol"];
+}
+
 @end

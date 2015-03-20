@@ -23,6 +23,6 @@
 /** 账户余额 (整数精度) */
 @property (nonatomic, readonly) NSString *amount_integer;
 /** 在使用“amount_integer”时小数点的位置 */
-@property (nonatomic, readonly) NSInteger *amount_decimal;
+@property (nonatomic, readonly) NSInteger amount_decimal;
 
 @end
