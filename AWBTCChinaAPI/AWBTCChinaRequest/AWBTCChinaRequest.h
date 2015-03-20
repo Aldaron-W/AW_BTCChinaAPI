@@ -13,6 +13,6 @@
 
 + (AWBTCChinaRequest *)sharedAPIKit;
 
-- (void)getAccountInfoWithType:(NSString *)requestType;
+- (void)getAccountInfoWithType:(NSString *)requestType withSuccess:(void (^)(NSDictionary *responseDictionary))success andFailure:(void (^)(NSError *error))failure;
 
 @end
