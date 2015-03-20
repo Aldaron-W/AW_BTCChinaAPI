@@ -93,6 +93,7 @@
 		3347659E1ABADA290001DB5E /* AWRequestMecros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AWRequestMecros.h; sourceTree = "<group>"; };
 		3347659F1ABADFD20001DB5E /* AWBTCChinaRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWBTCChinaRequest.h; sourceTree = "<group>"; };
 		334765A01ABADFD20001DB5E /* AWBTCChinaRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWBTCChinaRequest.m; sourceTree = "<group>"; };
+		334765A31ABBFD9C0001DB5E /* PrivateMarco.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrivateMarco.h; sourceTree = "<group>"; };
 		6DBE7350C5235CE7838D5274 /* Pods-AWBTCChinaAPIDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AWBTCChinaAPIDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AWBTCChinaAPIDemo/Pods-AWBTCChinaAPIDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		854CFA5EC1A9744513765712 /* Pods-AWBTCChinaAPIDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AWBTCChinaAPIDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-AWBTCChinaAPIDemo/Pods-AWBTCChinaAPIDemo.release.xcconfig"; sourceTree = "<group>"; };
 		B8040E46D5D5D32DCFB94959 /* libPods-AWBTCChinaAPIDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AWBTCChinaAPIDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +183,7 @@
 		330D8D691AB9950000DC6E76 /* AWBTCChinaAPI */ = {
 			isa = PBXGroup;
 			children = (
+				334765A21ABBFD860001DB5E /* Private */,
 				3347659D1ABAD9C70001DB5E /* Macro */,
 				334765991ABAC0A20001DB5E /* AWBTCChinaRequest */,
 				330D8D6A1AB9950000DC6E76 /* Model */,
@@ -261,6 +263,14 @@
 			);
 			path = Macro;
 			sourceTree = "<group>";
+		};
+		334765A21ABBFD860001DB5E /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				334765A31ABBFD9C0001DB5E /* PrivateMarco.h */,
+			);
+			path = Private;
+			sourceTree = SOURCE_ROOT;
 		};
 		3B602CB8E5F6B32386D33CFD /* Frameworks */ = {
 			isa = PBXGroup;

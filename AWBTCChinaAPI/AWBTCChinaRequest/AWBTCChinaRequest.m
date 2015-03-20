@@ -8,6 +8,8 @@
 
 #import "AWBTCChinaRequest.h"
 
+#import "PrivateMarco.h"
+
 @implementation AWBTCChinaRequest
 
 + (AWBTCChinaRequest *)sharedAPIKit {
@@ -16,8 +18,8 @@
     dispatch_once(&onceToken, ^{
         _sharedAPIKit = [[AWBTCChinaRequest alloc] init];
         
-        _sharedAPIKit.accessKey = @"2cf34378-cb2c-45a7-a53c-82ddeec788c7";
-        _sharedAPIKit.secretKey = @"fd9b0256-5a62-40fa-b920-9f956de35692";
+        _sharedAPIKit.accessKey = ACCESS_KEY;
+        _sharedAPIKit.secretKey = SECRET_KEY;
     });
     return _sharedAPIKit;
 }
