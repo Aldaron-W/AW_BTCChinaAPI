@@ -29,8 +29,21 @@
     
     AFJSONRPCClient *client = [AFJSONRPCClient clientWithEndpointURL:[NSURL URLWithString:BTCCHINA_REQUEST_BASE_URL]];
     [client setRequestSerializer:requestSerializer];
+    if (![self checkRequestKeysWithFailureBlock:failure]) {
+        return;
+    }
     [client invokeMethod:methodName withParameters:@[] requestId:@1 success:success failure:failure];
     
+}
+
+#pragma mark - Check Request Keys
+- (BOOL)checkRequestKeysWithFailureBlock:(void(^)(AFHTTPRequestOperation *operation, NSError *error))failure{
+    if (self.accessKey && self.secretKey && [self.accessKey length] > 0 && [self.secretKey length] > 0) {
+        return YES;
+    }
+    
+    failure(nil, [self getErrorWithErrorCode:-31000]);
+    return NO;
 }
 
 #pragma mark - HMAC-SHA1 (NO BASE64)
@@ -48,6 +61,23 @@
         [HMAC appendFormat:@"%02x", buffer[i]];
     }
     return HMAC;
+}
+
+#pragma mark - Error
+
+- (NSError *)getErrorWithErrorCode:(NSInteger)errorCode{
+    NSError *error = nil;
+    
+    switch (errorCode) {
+        case -31000:
+            error = [NSError errorWithDomain:@"AWBTCChinaAPI.RequestError" code:errorCode userInfo:@{@"because" : @"Access key or Secret key error"}];
+            break;
+            
+        default:
+            break;
+    }
+    
+    return error;
 }
 
 @end

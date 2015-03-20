@@ -19,7 +19,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    [[AWBTCChinaRequest sharedAPIKit] getAccountInfoWithType:@"all"];
+    [[AWBTCChinaRequest sharedAPIKit] getAccountInfoWithType:@"all" withSuccess:^(NSDictionary *responseDictionary) {
+        ;
+    } andFailure:^(NSError *error) {
+        ;
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
