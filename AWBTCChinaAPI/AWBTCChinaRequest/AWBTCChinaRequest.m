@@ -30,7 +30,7 @@
 
 - (void)getAccountInfoWithType:(NSString *)requestType withSuccess:(void (^)(NSDictionary *responseDictionary))success andFailure:(void (^)(NSError *error))failure{
     
-    [self sendRequestWithMethod:@"getAccountInfo" andParams:@"" andID:1 success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [self sendRequestWithMethod:@"getAccountInfo" andParams:requestType andID:1 success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSMutableDictionary *resposeDictionary = [NSMutableDictionary new];
         
         {
@@ -41,7 +41,9 @@
                 [model parseJSONData:[balance objectForKey:key]];
                 [balanceModel setObject:model forKey:key];
             }
-            [resposeDictionary setObject:balanceModel forKey:@"balance"];
+            if ([balanceModel count] > 0) {
+                [resposeDictionary setObject:balanceModel forKey:@"balance"];
+            }
         }
         
         {
@@ -52,7 +54,9 @@
                 [model parseJSONData:[frozen objectForKey:key]];
                 [frozenModel setObject:model forKey:key];
             }
-            [resposeDictionary setObject:frozenModel forKey:@"frozen"];
+            if ([frozenModel count] > 0) {
+                [resposeDictionary setObject:frozenModel forKey:@"frozen"];
+            }
         }
         
         {
@@ -63,16 +67,20 @@
                 [model parseJSONData:[loan objectForKey:key]];
                 [loanModel setObject:model forKey:key];
             }
-            [resposeDictionary setObject:loanModel forKey:@"loan"];
+            if ([loanModel count] > 0) {
+                [resposeDictionary setObject:loanModel forKey:@"loan"];
+            }
         }
         
         {
             NSMutableDictionary *profileModel = [NSMutableDictionary new];
             NSDictionary *profile = [responseObject objectForKey:@"profile"];
-                ProfileModel *model = [ProfileModel new];
-                [model parseJSONData:profile];
-                [profileModel setObject:model forKey:@"profile"];
-            [resposeDictionary setObject:profileModel forKey:@"profile"];
+            ProfileModel *model = [ProfileModel new];
+            [model parseJSONData:profile];
+            [profileModel setObject:model forKey:@"profile"];
+            if ([profileModel count] > 0) {
+                [resposeDictionary setObject:profileModel forKey:@"profile"];
+            }
         }
         
         if (success) {

@@ -32,8 +32,23 @@
     if (![self checkRequestKeysWithFailureBlock:failure]) {
         return;
     }
-    [client invokeMethod:methodName withParameters:@[] requestId:@1 success:success failure:failure];
+    [client invokeMethod:methodName withParameters:@[params] requestId:@1 success:success failure:failure];
     
+}
+
+#pragma mark - JSON
+- (NSString *)getRequestJSON:(id)requestParameters{
+    if ([NSJSONSerialization isValidJSONObject:requestParameters]) {
+        NSError *error = nil;
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:requestParameters options:NSJSONWritingPrettyPrinted error:&error];
+        if (!error) {
+            return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        }
+        else{
+            NSLog(@"%@", error);
+        }
+    }
+    return @"";
 }
 
 #pragma mark - Check Request Keys

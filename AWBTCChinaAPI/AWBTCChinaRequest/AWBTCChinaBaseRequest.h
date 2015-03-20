@@ -17,5 +17,6 @@
 - (void)sendRequestWithMethod:(NSString *)methodName andParams:(NSString *)params andID:(NSInteger)requestID
                       success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
                       failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
-
+#pragma mark - JSON
+- (NSString *)getRequestJSON:(id)requestParameters;
 @end
