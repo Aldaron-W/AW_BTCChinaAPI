@@ -13,6 +13,7 @@
 #import "FrozenModel.h"
 #import "LoanModel.h"
 #import "ProfileModel.h"
+#import "DepositModel.h"
 
 @implementation AWBTCChinaRequest
 
@@ -28,10 +29,17 @@
     return _sharedAPIKit;
 }
 
+/**
+ *  获取账户信息和余额。
+ *
+ *  @param requestType 参数可以是“all”，“balance”，“frozen”, “loan”或者“profile”，默认为“all”.
+ *  @param success     成功的回调函数
+ *  @param failure     失败的回调函数
+ */
 - (void)getAccountInfoWithType:(NSString *)requestType withSuccess:(void (^)(NSDictionary *responseDictionary))success andFailure:(void (^)(NSError *error))failure{
     
     [self sendRequestWithMethod:@"getAccountInfo" andParams:requestType andID:1 success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSMutableDictionary *resposeDictionary = [NSMutableDictionary new];
+        NSMutableDictionary *responseDictionary = [NSMutableDictionary new];
         
         {
             NSMutableDictionary *balanceModel = [NSMutableDictionary new];
@@ -42,7 +50,7 @@
                 [balanceModel setObject:model forKey:key];
             }
             if ([balanceModel count] > 0) {
-                [resposeDictionary setObject:balanceModel forKey:@"balance"];
+                [responseDictionary setObject:balanceModel forKey:@"balance"];
             }
         }
         
@@ -55,7 +63,7 @@
                 [frozenModel setObject:model forKey:key];
             }
             if ([frozenModel count] > 0) {
-                [resposeDictionary setObject:frozenModel forKey:@"frozen"];
+                [responseDictionary setObject:frozenModel forKey:@"frozen"];
             }
         }
         
@@ -68,7 +76,7 @@
                 [loanModel setObject:model forKey:key];
             }
             if ([loanModel count] > 0) {
-                [resposeDictionary setObject:loanModel forKey:@"loan"];
+                [responseDictionary setObject:loanModel forKey:@"loan"];
             }
         }
         
@@ -79,12 +87,12 @@
             [model parseJSONData:profile];
             [profileModel setObject:model forKey:@"profile"];
             if ([profileModel count] > 0) {
-                [resposeDictionary setObject:profileModel forKey:@"profile"];
+                [responseDictionary setObject:profileModel forKey:@"profile"];
             }
         }
         
         if (success) {
-            success(resposeDictionary);
+            success(responseDictionary);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (failure) {
@@ -93,4 +101,36 @@
     }];
 }
 
+/**
+ *  获得用户全部充值记录。
+ *
+ *  @param currency      目前支持“BTC”，“LTC”
+ *  @param isPendingOnly 默认为“true”。如果为“true”，仅返回尚未入账的比特币或者莱特币充值
+ *  @param success       成功的回调函数
+ *  @param failure       失败的回调函数
+ */
+- (void)getDepositsWithCurrency:(NSString *)currency andPendingOnly:(BOOL)isPendingOnly withSuccess:(void (^)(NSDictionary *responseDictionary))success andFailure:(void (^)(NSError *error))failure{
+    [self sendRequestWithMethod:@"getDeposits" andParams:currency andID:1 success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSMutableDictionary *responseDictionary = [NSMutableDictionary new];
+        
+        NSArray *deposit = [responseObject objectForKey:@"deposit"];
+        NSMutableArray *depositArray = [NSMutableArray new];
+        
+        [deposit enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL *stop) {
+            DepositModel *model = [[DepositModel alloc] init];
+            [model parseJSONData:obj];
+            [depositArray addObject:model];
+        }];
+        
+        [responseDictionary setValue:depositArray forKey:@"deposit"];
+        
+        if (success) {
+            success(responseDictionary);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
 @end
