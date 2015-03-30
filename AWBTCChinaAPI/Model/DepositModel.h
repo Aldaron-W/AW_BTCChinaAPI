@@ -23,7 +23,7 @@
 /** 充值数量 **/
 @property (nonatomic, readonly) NSNumber *amount;
 /** Unix 时间戳。自1970年1月1日以来的秒数 **/
-@property (nonatomic, readonly) NSInteger date;
+@property (nonatomic, readonly) NSDate *date;
 /** 充值状态。可能值：pending 或 completed **/
 @property (nonatomic, readonly) NSString *status;
 

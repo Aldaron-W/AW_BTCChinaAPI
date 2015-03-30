@@ -33,4 +33,18 @@
     self.symbol = [responseObject objectForKey:@"symbol"];
 }
 
+- (NSString *)description{
+    NSMutableString *amount_zero = [NSMutableString new];
+    
+    if (self.amount_integer.length < self.amount_decimal) {
+        for (int i=0; i < (self.amount_decimal - self.amount_integer.length); i++) {
+            [amount_zero appendString:@"0"];
+        }
+    }
+    
+    NSString *message = [NSString stringWithFormat:@"%@账户的余额为：%d.%@%@ %@", self.currency, [self.amount intValue], amount_zero, self.amount_integer, self.symbol];
+    NSLog(@"%@", message);
+    return message;
+}
+
 @end

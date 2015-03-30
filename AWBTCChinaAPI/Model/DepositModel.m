@@ -19,12 +19,27 @@
 /** 充值数量 **/
 @property (nonatomic, strong) NSNumber *amount;
 /** Unix 时间戳。自1970年1月1日以来的秒数 **/
-@property (nonatomic, assign) NSInteger date;
+@property (nonatomic, assign) NSDate *date;
 /** 充值状态。可能值：pending 或 completed **/
 @property (nonatomic, strong) NSString *status;
 
 @end
 
 @implementation DepositModel
+
+- (void)parseJSONData:(NSDictionary *)responseObject{
+    self.depositID = [[responseObject objectForKey:@"depositID"] integerValue];
+    self.address = [responseObject objectForKey:@"address"];
+    self.currency = [responseObject objectForKey:@"currency"];
+    self.amount = [NSNumber numberWithDouble:[[responseObject objectForKey:@"amount"] doubleValue]];
+    self.date = [NSDate dateWithTimeIntervalSince1970:[[responseObject objectForKey:@"date"] doubleValue]];
+    self.status = [responseObject objectForKey:@"status"];
+}
+
+- (NSString *)description{
+    NSString *message = [NSString stringWithFormat:@"depositID:%ld,address:%@,currency:%@amount:%@,date:%@,status:%@", self.depositID, self.address, self.currency, self.amount, self.date, self.status];
+//    NSLog(@"%@", message);
+    return message;
+}
 
 @end
