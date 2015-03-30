@@ -19,11 +19,29 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    
+}
+- (IBAction)GetAccountInfoTouchEvent:(id)sender {
+    __weak typeof(self) weakSelf = self;
     [[AWBTCChinaRequest sharedAPIKit] getAccountInfoWithType:@"all" withSuccess:^(NSDictionary *responseDictionary) {
-        ;
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf showResponseInfo:responseDictionary];
     } andFailure:^(NSError *error) {
         ;
     }];
+}
+- (IBAction)GetDepositsTouchEvent:(id)sender {
+    __weak typeof(self) weakSelf = self;
+    [[AWBTCChinaRequest sharedAPIKit] getDepositsWithCurrency:@"BTC" andPendingOnly:YES withSuccess:^(NSDictionary *responseDictionary) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf showResponseInfo:responseDictionary];
+    } andFailure:^(NSError *error) {
+        ;
+    }];
+}
+
+- (void)showResponseInfo:(NSDictionary *)responseDictionary{
+    NSLog(@"%@", responseDictionary);
 }
 
 - (void)didReceiveMemoryWarning {
